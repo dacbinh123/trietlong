@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm bài viết</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        h1 {
+            color: #3b5bdb;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #e7f5ff;
+        }
+        
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        
+        #add-post-form {
+            background: linear-gradient(120deg, #fff 80%, #e7f5ff 100%);
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(56, 108, 255, 0.09);
+            padding: 2rem 2.5rem 1.5rem 2.5rem;
+            margin-top: 2rem;
+            border: 1px solid #b6ccfe;
+        }
+        
+        #add-post-form .form-label {
+            font-weight: 500;
+            color: #364fc7;
+        }
+        
+        #add-post-form textarea {
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 1.05rem;
+        }
+        
+        #add-post-form button[type="submit"] {
+            min-width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <h1>Thêm bài viết</h1>
+        <form id="add-post-form">
+            <div class="mb-3">
+                <label for="title" class="form-label">Tiêu đề</label>
+                <input type="text" class="form-control" id="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Nội dung (HTML)</label>
+                <textarea class="form-control" id="content" rows="8" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="seoTitle" class="form-label">SEO Title (tùy chọn)</label>
+                <input type="text" class="form-control" id="seoTitle">
+            </div>
+            <div class="mb-3">
+                <label for="seoDescription" class="form-label">SEO Description (tùy chọn)</label>
+                <input type="text" class="form-control" id="seoDescription">
+            </div>
+            <div class="mb-3">
+                <label for="slug" class="form-label">Slug (tùy chọn)</label>
+                <input type="text" class="form-control" id="slug" placeholder="Tự tạo nếu để trống">
+            </div>
+            <button type="submit" class="btn btn-success">Thêm</button>
+            <a href="index.html" class="btn btn-secondary ms-2">Hủy</a>
+        </form>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('add-post-form').addEventListener('submit', handleAddPost);
+    </script>
+</body>
+
+</html>
